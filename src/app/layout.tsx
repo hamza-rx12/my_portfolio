@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../styles/theme.css";
+import "../app/globals.css";
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,8 +29,31 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{
+          minHeight: '100vh',
+          background: 'var(--color-terminal-bg) url(/forest-bg.jpg) center center/cover no-repeat fixed',
+          color: 'var(--color-terminal-text)',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
       >
-        {children}
+        <Navbar />
+        <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'flex-start', width: '100%' }}>
+          <div style={{
+            width: '100%',
+            maxWidth: 1280,
+            margin: '2.5rem 1rem 2rem 1rem',
+            background: 'var(--color-terminal-panel)',
+            border: '1px solid var(--color-terminal-border)',
+            borderRadius: '0.5rem',
+            boxShadow: 'none',
+            padding: '2.5rem',
+            backdropFilter: 'none',
+          }}>
+            {children}
+          </div>
+        </div>
+        <Footer />
       </body>
     </html>
   );

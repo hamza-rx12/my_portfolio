@@ -3,6 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-terminal-bg: #0a0a0a;
+  --color-terminal-text: #ededed;
+  --color-terminal-green: #00ff00;
+  --color-terminal-bg-alt: #1a1a1a;
+  --color-terminal-border: #555555;
+  --font-terminal: monospace;
 }
 
 @theme inline {
@@ -20,7 +26,42 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-terminal-bg) url('/forest-bg.jpg') center center/cover no-repeat fixed;
+  color: var(--color-terminal-text);
+  font-family: var(--font-terminal);
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--color-terminal-bg-alt);
+  opacity: 0.85;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#root,
+main,
+.main-content-container {
+  position: relative;
+  z-index: 1;
+}
+
+::selection {
+  background: var(--color-terminal-green);
+  color: #232a2d;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--color-terminal-bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-terminal-border);
+  border-radius: 4px;
 }
