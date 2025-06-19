@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Terminal-Themed Portfolio
 
-## Getting Started
+A modern, minimal, and highly customizable portfolio built with Next.js 15, inspired by terminal emulators and fastfetch/neofetch output. Designed for developers who love the terminal aesthetic and want to showcase their work, skills, and contact info in a unique way.
 
-First, run the development server:
+![screenshot](public/forest-bg.jpg)
 
+## ✨ Features
+- **Terminal-inspired UI:** Catppuccin/Mocha color palette, monospace font, and command-line style headers.
+- **Responsive design:** Looks great on all devices.
+- **Animated section headers:** Each page uses a terminal command (e.g., `>>> whoami`, `>>> ls projects`).
+- **About section:** Fastfetch-style info panel with your picture, skills, hobbies, languages, and activities.
+- **Projects:** Showcases your work with custom cards and icons.
+- **Contact:** Stylish cards for LinkedIn, GitHub, and email.
+- **Active navbar highlighting:** Always know which section you're in.
+- **Easy customization:** All content and theme colors are easy to update.
+
+## 🛠️ Tech Stack
+- [Next.js 15 (App Router)](https://nextjs.org/)
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [react-icons](https://react-icons.github.io/react-icons/)
+- [Catppuccin/Mocha palette](https://catppuccin.com/)
+
+## 🚀 Getting Started
+
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/your-username/your-portfolio.git
+   cd your-portfolio
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+3. **Run the dev server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+4. **Open [http://localhost:3000](http://localhost:3000) in your browser.**
+
+## 🖌️ Customization
+- **Profile picture:** Replace `public/images/myPic.png` with your own.
+- **About info:** Edit `src/app/about/page.tsx` for your name, description, skills, hobbies, and activities.
+- **Projects:** Edit `src/app/projects/page.tsx` to add your own projects.
+- **Contact:** Edit `src/app/contact/page.tsx` for your LinkedIn, GitHub, and email.
+- **Theme colors:** Tweak `src/styles/theme.css` for your favorite terminal palette.
+- **Background:** Replace `public/forest-bg.jpg` for a custom background.
+
+## 📦 Build for Production
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📬 Contact
+- **LinkedIn:** [hamza-alaoui-mhamdi](https://www.linkedin.com/in/hamza-alaoui-mhamdi)
+- **GitHub:** [hamza-rx12](https://github.com/hamza-rx12/)
+- **Email:** alaoui.hamza2002@gmail.com
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> Inspired by fastfetch, neofetch, and the Catppuccin/Mocha terminal theme.

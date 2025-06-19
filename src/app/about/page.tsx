@@ -1,8 +1,9 @@
 "use client";
 
 import Image from 'next/image';
-import { FaGamepad, FaBook, FaMusic, FaPlane, FaLinux, FaCode, FaLanguage, FaTerminal, FaSmile, FaKeyboard, FaUserAstronaut, FaRobot } from 'react-icons/fa';
-import { SiGnubash, SiGnome, SiVsco, SiNeovim, SiArchlinux, SiJavascript, SiTypescript, SiPython, SiGo, SiRust, SiC } from 'react-icons/si';
+import { FaJava, FaBook, FaMusic, FaPlane, FaLinux, FaCode, FaLanguage, FaTerminal, FaSmile, FaKeyboard, FaUserAstronaut, FaRobot } from 'react-icons/fa';
+import { SiGnubash, SiGnome, SiVsco, SiNeovim, SiArchlinux, SiJavascript, SiTypescript, SiPython, SiRust, SiC, SiHtml5, SiCss3, SiMyanimelist } from 'react-icons/si';
+import { RiJavaLine } from "react-icons/ri";
 
 const aboutInfo = {
     user: 'Hamza',
@@ -11,10 +12,10 @@ const aboutInfo = {
     hobbies: [
         { icon: <FaCode />, label: 'Coding' },
         { icon: <FaLinux />, label: 'Linux ricing' },
-        { icon: <FaGamepad />, label: 'Gaming' },
         { icon: <FaBook />, label: 'Reading' },
         { icon: <FaMusic />, label: 'Music' },
         { icon: <FaPlane />, label: 'Travel' },
+        { icon: <SiMyanimelist />, label: 'Anime/Manga' }
     ],
     languages: [
         { icon: <FaLanguage />, label: 'Arabic' },
@@ -22,13 +23,17 @@ const aboutInfo = {
         { icon: <FaLanguage />, label: 'French' },
     ],
     programming: [
+        { icon: <SiC />, label: 'C' },
+        { icon: <RiJavaLine />, label: 'Java' },
+        { icon: <SiPython />, label: 'Python' },
+        { icon: <SiGnubash />, label: 'Shell' },
         { icon: <SiTypescript />, label: 'TypeScript' },
         { icon: <SiJavascript />, label: 'JavaScript' },
-        { icon: <SiPython />, label: 'Python' },
-        { icon: <SiGo />, label: 'Go' },
+        { icon: <SiHtml5 />, label: 'HTML' },
+        { icon: <SiCss3 />, label: 'CSS' },
         { icon: <SiRust />, label: 'Rust' },
-        { icon: <SiC />, label: 'C' },
-        { icon: <SiGnubash />, label: 'Shell' },
+
+
     ],
     fun: [
         { icon: <SiArchlinux />, label: 'OS: Arch Linux (btw)' },
@@ -67,20 +72,7 @@ export default function AboutPage() {
                 <div className="ff-info">
                     <div className="ff-row ff-title">{aboutInfo.user} <span className="ff-at">@</span> {aboutInfo.host}</div>
                     <div className="ff-row ff-desc">{aboutInfo.description}</div>
-                    <div className="ff-row"><span className="ff-label ff-hardware">Hobbies:</span>
-                        <span className="ff-badges ff-badges-hobbies">
-                            {aboutInfo.hobbies.map((h, i) => (
-                                <span key={i} className="ff-badge ff-badge-hobby ff-icon-label">{h.icon} {h.label}</span>
-                            ))}
-                        </span>
-                    </div>
-                    <div className="ff-row"><span className="ff-label ff-lang">Languages:</span>
-                        <span className="ff-badges ff-badges-languages">
-                            {aboutInfo.languages.map((l, i) => (
-                                <span key={i} className="ff-badge ff-badge-lang ff-icon-label">{l.icon} {l.label}</span>
-                            ))}
-                        </span>
-                    </div>
+
                     <div className="ff-row"><span className="ff-label ff-code">Programming:</span>
                         <span className="ff-badges ff-badges-programming">
                             {aboutInfo.programming.map((p, i) => (
@@ -88,6 +80,24 @@ export default function AboutPage() {
                             ))}
                         </span>
                     </div>
+
+                    <div className="ff-row"><span className="ff-label ff-lang">Languages:</span>
+                        <span className="ff-badges ff-badges-languages">
+                            {aboutInfo.languages.map((l, i) => (
+                                <span key={i} className="ff-badge ff-badge-lang ff-icon-label">{l.icon} {l.label}</span>
+                            ))}
+                        </span>
+                    </div>
+
+                    <div className="ff-row"><span className="ff-label ff-hardware">Hobbies:</span>
+                        <span className="ff-badges ff-badges-hobbies">
+                            {aboutInfo.hobbies.map((h, i) => (
+                                <span key={i} className="ff-badge ff-badge-hobby ff-icon-label">{h.icon} {h.label}</span>
+                            ))}
+                        </span>
+                    </div>
+
+
 
                     {/* Activities Section */}
                     <div className="ff-row ff-activities-title"><span className="ff-activities-icon">★</span> ACTIVITIES</div>
