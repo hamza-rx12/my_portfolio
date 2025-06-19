@@ -28,4 +28,52 @@
     --color-terminal-link: #ff79c6;
     --color-terminal-link-hover: #7dd3fc;
     --font-terminal: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+
+    /* Catppuccin Mocha Palette */
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    /* App Theme Mapping */
+    --color-terminal-bg: var(--ctp-base);
+    --color-terminal-bg-alt: var(--ctp-surface0);
+    --color-terminal-panel: var(--ctp-mantle);
+    --color-terminal-border: var(--ctp-surface2);
+    --color-terminal-text: var(--ctp-text);
+    --color-terminal-orange: var(--ctp-peach);
+    --color-terminal-teal: var(--ctp-teal);
+    --color-terminal-yellow: var(--ctp-yellow);
+    --color-terminal-pink: var(--ctp-pink);
+    --color-terminal-blue: var(--ctp-blue);
+    --color-terminal-green: var(--ctp-green);
+    --color-terminal-folder: var(--ctp-teal);
+    --color-terminal-file: var(--ctp-yellow);
+    --color-terminal-branch: var(--ctp-pink);
+    --color-terminal-info: var(--ctp-blue);
+    --color-terminal-link: var(--ctp-pink);
+    --color-terminal-link-hover: var(--ctp-blue);
+    --font-terminal: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
 }

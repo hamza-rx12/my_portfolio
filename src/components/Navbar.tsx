@@ -1,34 +1,64 @@
 "use client";
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/contact', label: 'Contact' },
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#education', label: 'Education' },
+  { href: '#hobbies-activities', label: 'Hobbies & Activities' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#contact', label: 'Contact' },
 ];
 
+function getSectionFromHash(hash: string): string {
+  return hash ? hash.replace('#', '') : 'home';
+}
+
 export default function Navbar() {
-  const pathname = usePathname();
+  const [active, setActive] = useState('home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navLinks.map(link => document.getElementById(link.href.replace('#', '')));
+      const scrollY = window.scrollY + 120; // offset for navbar
+      let current = 'home';
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollY) {
+          current = navLinks[i].href.replace('#', '');
+        }
+      }
+      setActive(current);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.replace('#', '');
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setActive(id);
+    }
+  };
+
   return (
     <nav className="navbar">
-      <div className="navbar__logo">
-        <Link href="/">
-          <span>MyPortfolio</span>
-        </Link>
-      </div>
       <ul className="navbar__links">
         {navLinks.map(link => {
-          const isActive =
-            link.href === '/'
-              ? pathname === '/'
-              : pathname === link.href || pathname.startsWith(link.href + '/');
+          const isActive = active === link.href.replace('#', '');
           return (
             <li key={link.href}>
-              <Link href={link.href}>
+              <a
+                href={link.href}
+                onClick={e => handleNavClick(e, link.href)}
+              >
                 <span className={isActive ? 'active' : ''}>{link.label}</span>
-              </Link>
+              </a>
             </li>
           );
         })}
@@ -36,7 +66,6 @@ export default function Navbar() {
       <style jsx>{`
         .navbar {
           display: flex;
-          justify-content: space-between;
           align-items: center;
           padding: 0.7rem 1.5rem;
           background: #181a20;
@@ -44,17 +73,16 @@ export default function Navbar() {
           font-family: var(--font-terminal);
           box-shadow: 0 2px 12px 0 #000a;
           z-index: 100;
-        }
-        .navbar__logo span {
-          font-weight: 700;
-          font-size: 1.1rem;
-          color: #ffb86c;
-          letter-spacing: 1px;
+          position: sticky;
+          top: 0;
+          transition: transform 0.28s cubic-bezier(.4,0,.2,1), opacity 0.18s;
         }
         .navbar__links {
           display: flex;
           gap: 1.1rem;
           list-style: none;
+          width: 100%;
+          justify-content: flex-start;
         }
         .navbar__links li span {
           color: #fff;

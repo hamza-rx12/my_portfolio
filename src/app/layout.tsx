@@ -38,20 +38,8 @@ export default function RootLayout({
         }}
       >
         <Navbar />
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'flex-start', width: '100%' }}>
-          <div style={{
-            width: '100%',
-            maxWidth: 1280,
-            margin: '2.5rem 1rem 2rem 1rem',
-            background: 'var(--color-terminal-panel)',
-            border: '1px solid var(--color-terminal-border)',
-            borderRadius: '0.5rem',
-            boxShadow: 'none',
-            padding: '2.5rem',
-            backdropFilter: 'none',
-          }}>
-            {children}
-          </div>
+        <div style={{ flex: 1, width: '100%' }}>
+          {children}
         </div>
         <Footer />
       </body>

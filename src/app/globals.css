@@ -39,7 +39,7 @@ body::before {
   position: fixed;
   inset: 0;
   background: var(--color-terminal-bg-alt);
-  opacity: 0.85;
+  opacity: 0.65;
   z-index: 0;
   pointer-events: none;
 }
@@ -64,4 +64,45 @@ main,
 ::-webkit-scrollbar-thumb {
   background: var(--color-terminal-border);
   border-radius: 4px;
+}
+
+html,
+body,
+#__next,
+#root {
+  height: 100%;
+}
+
+main.spa-main {
+  scroll-snap-type: y mandatory;
+}
+
+.spa-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  padding: 2.5rem 0;
+}
+
+.ff-header {
+  font-size: 1.7rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-terminal);
+  font-weight: bold;
+}
+
+.cmd-arrow {
+  color: var(--color-terminal-orange);
+  font-weight: bold;
+}
+
+.cmd-cmd {
+  color: var(--color-terminal-teal);
+  font-weight: bold;
 }
