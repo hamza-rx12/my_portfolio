@@ -26,12 +26,14 @@ export default function EducationSection() {
             </div>
             <div className="education-list">
                 {education.map((ed, i) => (
-                    <div className="education-entry" key={i}>
-                        <div className="education-title-row">
-                            <span className="education-title">{ed.title}</span>
-                            <span className="education-dates">{ed.dates}</span>
+                    <div className="slide-up-in" style={{ transitionDelay: `${i * 120}ms` }} key={i}>
+                        <div className="education-entry">
+                            <div className="education-title-row">
+                                <span className="education-title">{ed.title}</span>
+                                <span className="education-dates">{ed.dates}</span>
+                            </div>
+                            <div className="education-inst">{ed.institution}</div>
                         </div>
-                        <div className="education-inst">{ed.institution}</div>
                     </div>
                 ))}
             </div>

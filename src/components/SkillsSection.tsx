@@ -3,7 +3,7 @@
 const skills = [
     {
         category: "Languages",
-        items: ["Python", "Java", "C", "JavaScript", "PL/SQL", "Shell (Bash)"]
+        items: ["C", "Java", "Python", "JavaScript/TypeScript", "PL/SQL", "Shell (Bash)", "Rust (simple stuff)"]
     },
     {
         category: "Artificial Intelligence",
@@ -43,12 +43,14 @@ export default function SkillsSection() {
             </div>
             <div className="skills-list">
                 {skills.map((cat, i) => (
-                    <div className="skills-category" key={i}>
-                        <div className="skills-category-title">{cat.category}</div>
-                        <div className="skills-badges">
-                            {cat.items.map((item, j) => (
-                                <span className="skill-badge" key={j}>{item}</span>
-                            ))}
+                    <div className="slide-up-in" style={{ transitionDelay: `${i * 100}ms` }} key={i}>
+                        <div className="skills-category">
+                            <div className="skills-category-title">{cat.category}</div>
+                            <div className="skills-badges">
+                                {cat.items.map((item, j) => (
+                                    <span className="skill-badge" key={j}>{item}</span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 ))}

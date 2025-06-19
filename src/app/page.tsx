@@ -76,6 +76,16 @@ export default function HomePage() {
           opacity: 1;
           transform: none;
         }
+        /* Slide-up-in effect for section content */
+        .slide-up-in {
+          opacity: 0;
+          transform: translateY(60px);
+          transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+        }
+        .spa-section.visible .slide-up-in {
+          opacity: 1;
+          transform: none;
+        }
         .ff-header, .ff-header-center {
           display: flex;
           justify-content: center;

@@ -60,18 +60,20 @@ With hands-on experience in machine learning, data processing, and software deve
 
 export default function AboutSection() {
     return (
-        <section id="about" className="about-fastfetch" style={{ padding: '2rem' }}>
+        <section id="about" className="about-fastfetch spa-section" style={{ padding: '2rem' }}>
             <div className="ff-header ff-header-center">
                 <span className="cmd-arrow">&gt;&gt;&gt;</span> <span className="cmd-cmd">whoami</span>
             </div>
             <div className="ff-main ff-main-center">
-                <div className="ff-info-box ff-info-box-center">
-                    <div className="ff-pic-wrapper ff-pic-wrapper-inside">
-                        <Image src="/images/myPic.png" alt="Hamza" width={160} height={160} className="ff-pic" />
-                    </div>
-                    <div className="ff-info ff-info-center">
-                        <div className="ff-row ff-title ff-title-center">{aboutInfo.user} {aboutInfo.host}</div>
-                        <div className="ff-row ff-desc ff-desc-center">{aboutInfo.description}</div>
+                <div className="slide-up-in">
+                    <div className="ff-info-box ff-info-box-center">
+                        <div className="ff-pic-wrapper ff-pic-wrapper-inside">
+                            <Image src="/images/myPic.png" alt="Hamza" width={160} height={160} className="ff-pic" />
+                        </div>
+                        <div className="ff-info ff-info-center">
+                            <div className="ff-row ff-title ff-title-center">{aboutInfo.user} {aboutInfo.host}</div>
+                            <div className="ff-row ff-desc ff-desc-center">{aboutInfo.description}</div>
+                        </div>
                     </div>
                 </div>
             </div>

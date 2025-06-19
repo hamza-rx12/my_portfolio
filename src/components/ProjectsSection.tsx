@@ -76,13 +76,15 @@ const projects = [
 
 export default function ProjectsSection() {
     return (
-        <section id="projects" style={{ padding: '2rem' }}>
+        <section id="projects" className="spa-section" style={{ padding: '2rem' }}>
             <div className="ff-header">
                 <span className="cmd-arrow">&gt;&gt;&gt;</span> <span className="cmd-cmd">ls projects</span>
             </div>
             <div className="projects-grid">
-                {projects.map((project) => (
-                    <ProjectCard key={project.title} {...project} />
+                {projects.map((project, idx) => (
+                    <div className="slide-up-in" style={{ transitionDelay: `${idx * 100}ms` }} key={project.title}>
+                        <ProjectCard {...project} />
+                    </div>
                 ))}
             </div>
             <style jsx>{`

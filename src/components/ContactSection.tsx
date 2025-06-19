@@ -16,23 +16,24 @@ const CONTACTS = [
 
 export default function ContactSection() {
     return (
-        <section id="contact" style={{ padding: '2rem' }}>
+        <section id="contact" className="spa-section" style={{ padding: '2rem' }}>
             <div className="ff-header">
                 <span className="cmd-arrow">&gt;&gt;&gt;</span> <span className="cmd-cmd">ls contact</span>
             </div>
             <div className="contact-list">
                 {CONTACTS.map((c, i) => (
-                    <a
-                        key={i}
-                        href={c.link}
-                        className="contact-card"
-                        target={c.link.startsWith('http') ? '_blank' : undefined}
-                        rel={c.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    >
-                        <span className="contact-icon">{c.icon}</span>
-                        <span className="contact-label">{c.label}:</span>
-                        <span className="contact-value">{c.value}</span>
-                    </a>
+                    <div className="slide-up-in" style={{ transitionDelay: `${i * 120}ms` }} key={i}>
+                        <a
+                            href={c.link}
+                            className="contact-card"
+                            target={c.link.startsWith('http') ? '_blank' : undefined}
+                            rel={c.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        >
+                            <span className="contact-icon">{c.icon}</span>
+                            <span className="contact-label">{c.label}:</span>
+                            <span className="contact-value">{c.value}</span>
+                        </a>
+                    </div>
                 ))}
             </div>
             <style jsx>{`
