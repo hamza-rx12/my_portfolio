@@ -116,10 +116,12 @@ export default function ProjectCard({ title, description, image, github, demo, t
           margin-bottom: 1.5rem;
           font-family: var(--font-terminal);
           color: var(--color-terminal-text);
-          padding: 1.1rem 1.1rem 1.1rem 1.3rem;
+          padding: 1.6rem 1.6rem 1.6rem 1.8rem;
           box-shadow: none;
           cursor: pointer;
           transition: box-shadow 0.18s, transform 0.18s;
+          max-width: 1200px;
+          width: 100%;
         }
         .project-card:focus, .project-card:hover {
           box-shadow: 0 4px 32px 0 var(--ctp-mauve), 0 1.5px 0 0 var(--ctp-mauve) inset;
@@ -127,12 +129,13 @@ export default function ProjectCard({ title, description, image, github, demo, t
         }
         .project-card__image-wrapper {
           width: 100%;
+          max-width: 1200px;
+          aspect-ratio: 16/9;
           position: relative;
-          padding-top: 56.25%; /* 16:9 aspect ratio */
           background: #111;
           border-radius: 0.2rem;
           overflow: hidden;
-          margin-bottom: 0.6rem;
+          margin-bottom: 0.9rem;
         }
         .project-card__image {
           position: absolute;
@@ -202,7 +205,7 @@ export default function ProjectCard({ title, description, image, github, demo, t
           border-radius: 1.2em;
           box-shadow: 0 8px 48px 0 #000a, 0 0 0 3px var(--ctp-mauve);
           padding: 2.2em 2.2em 1.5em 2.2em;
-          max-width: 420px;
+          max-width: 750px;
           width: 95vw;
           position: relative;
           display: flex;
@@ -231,9 +234,9 @@ export default function ProjectCard({ title, description, image, github, demo, t
         }
         .modal-image-wrapper {
           width: 100%;
-          max-width: 320px;
+          max-width: 480px;
+          aspect-ratio: 16/9;
           position: relative;
-          padding-top: 56.25%; /* 16:9 aspect ratio */
           border-radius: 0.7em;
           overflow: hidden;
           margin-bottom: 1.1em;
@@ -395,13 +398,13 @@ export default function ProjectCard({ title, description, image, github, demo, t
 
         @media (max-width: 600px) {
           .project-card {
-            padding: 0.7rem 0.5rem 0.7rem 0.7rem;
+            padding: 0.8rem 0.5rem 0.8rem 0.8rem;
+            max-width: 100vw;
           }
           .project-card__image-wrapper {
-            padding-top: 0;
-            height: 120px;
+            aspect-ratio: 16/9;
             min-height: 0;
-            max-height: 120px;
+            max-width: 100vw;
           }
           .project-card__image {
             position: absolute;
@@ -413,13 +416,13 @@ export default function ProjectCard({ title, description, image, github, demo, t
           }
           .modal-window {
             padding: 1.1em 0.5em 1em 0.5em;
-            max-width: 98vw;
+            max-width: 100vw;
           }
           .modal-image-wrapper {
-            padding-top: 0;
-            height: 120px;
+            aspect-ratio: 16/9;
+            height: auto;
             min-height: 0;
-            max-height: 120px;
+            max-width: 98vw;
           }
           .modal-image {
             position: absolute;

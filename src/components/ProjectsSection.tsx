@@ -92,12 +92,9 @@ export default function ProjectsSection() {
               .projects-grid {
                 display: grid;
                 gap: 2rem;
-                grid-template-columns: 1fr;
-              }
-              @media (min-width: 700px) {
-                .projects-grid {
-                  grid-template-columns: 1fr 1fr;
-                }
+                grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+                max-width: 1400px;
+                margin: 0 auto;
               }
             `}</style>
         </section>

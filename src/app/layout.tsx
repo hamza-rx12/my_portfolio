@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Hamza Portfolio",
-  description: "Portfolio created with Next",
+  description: "A portfolio created by Hamza Alaoui Mhamdi, built with Next.js and inspired by Arch Linux and Catppuccin style. Showcases projects, skills, and contact info in a modern, terminal-themed interface.",
 };
 
 export default function RootLayout({
