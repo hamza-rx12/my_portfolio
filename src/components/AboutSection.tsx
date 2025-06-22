@@ -77,6 +77,13 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
+      <div className="resume-dropdown">
+        <button className="resume-main-btn">Download Resume ▼</button>
+        <div className="resume-dropdown-content">
+          <a href="/resume/resume-en.pdf" download>🇬🇧 English</a>
+          <a href="/resume/resume-fr.pdf" download>🇫🇷 French</a>
+        </div>
+      </div>
       <style jsx>{`
                 .about-fastfetch {
                   font-family: var(--font-terminal);
@@ -169,7 +176,54 @@ export default function AboutSection() {
                     margin-bottom: 0.7em;
                   }
                 }
-            `}</style>
+                .resume-dropdown {
+                  position: relative;
+                  display: inline-block;
+                  margin: 2rem 0 0 0;
+                }
+                .resume-main-btn {
+                  background: var(--color-terminal-bg-alt);
+                  color: var(--ctp-mauve);
+                  border: 2px solid var(--ctp-mauve);
+                  border-radius: 0.8em;
+                  font-weight: 600;
+                  padding: 0.7em 1.5em;
+                  font-size: 1.08em;
+                  cursor: pointer;
+                  transition: background 0.18s, color 0.18s, border 0.18s;
+                }
+                .resume-main-btn:hover {
+                  background: var(--ctp-mauve);
+                  color: var(--ctp-base);
+                  border-color: var(--ctp-pink);
+                }
+                .resume-dropdown-content {
+                  display: none;
+                  position: absolute;
+                  background: var(--color-terminal-bg-alt);
+                  min-width: 160px;
+                  box-shadow: 0 2px 8px 0 #0003;
+                  border-radius: 0.8em;
+                  z-index: 1;
+                  margin-top: 0.3em;
+                  right: 0;
+                }
+                .resume-dropdown:hover .resume-dropdown-content {
+                  display: block;
+                }
+                .resume-dropdown-content a {
+                  color: var(--ctp-mauve);
+                  padding: 0.7em 1.2em;
+                  text-decoration: none;
+                  display: block;
+                  border-radius: 0.8em;
+                  transition: background 0.18s, color 0.18s;
+                }
+                .resume-dropdown-content a:hover {
+                  background: var(--ctp-mauve);
+                  color: var(--ctp-base);
+                }
+      `}</style>
     </section>
   );
 } 

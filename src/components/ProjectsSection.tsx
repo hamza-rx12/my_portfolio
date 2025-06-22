@@ -46,14 +46,13 @@ const projects = [
     {
         title: 'Typo Tamer',
         description:
-            'An intelligent spell checker using dynamic edit distance and machine learning algorithms to automatically detect and correct typos.',
+            'A typo correction tool developed from scratch using minimum edit distance algorithm and Jellyfish for phonetic comparison of words, providing automatic text correction.',
         github: 'https://github.com/hamza-rx12/typo_tamer.git',
         tools: [
             'Levenshtein Distance',
             'Phonetic Comparison',
             'Python',
             'Jellyfish',
-            'Real-time Detection & Correction',
         ],
         image: '/projects/typoTamer.png',
     },
@@ -95,6 +94,11 @@ export default function ProjectsSection() {
                 grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
                 max-width: 1400px;
                 margin: 0 auto;
+              }
+              @media (max-width: 700px) {
+                .projects-grid {
+                  grid-template-columns: 1fr;
+                }
               }
             `}</style>
         </section>
