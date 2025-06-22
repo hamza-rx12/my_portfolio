@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from 'react';
+import Image from 'next/image';
 
 type ProjectCardProps = {
   title: string;
@@ -48,7 +49,7 @@ export default function ProjectCard({ title, description, image, github, demo, t
     <>
       <div className="project-card" tabIndex={0} role="button" aria-label={`Open details for ${title}`} onClick={() => setOpen(true)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setOpen(true); }}>
         <div className="project-card__image-wrapper">
-          <img src={image} alt={title} className="project-card__image" />
+          <Image src={image} alt={title} className="project-card__image" fill sizes="(max-width: 700px) 100vw, 50vw" />
           <div className="project-card__overlay">
             <span className="click-hint">Click to view details</span>
           </div>
@@ -62,7 +63,7 @@ export default function ProjectCard({ title, description, image, github, demo, t
           <div className="modal-window" onClick={e => e.stopPropagation()} role="dialog" aria-modal="true" aria-label={title}>
             <button className="modal-close" onClick={() => setOpen(false)} aria-label="Close">×</button>
             <div className="modal-image-wrapper" onClick={handleImageClick}>
-              <img src={image} alt={title} className="modal-image" />
+              <Image src={image} alt={title} className="modal-image" fill sizes="(max-width: 700px) 100vw, 320px" />
               <div className="image-click-hint">
                 <span>Click to view full size</span>
               </div>
@@ -78,7 +79,7 @@ export default function ProjectCard({ title, description, image, github, demo, t
             )}
             <div className="modal-links">
               {github && <a href={github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>}
-              {demo && <a href={demo} target="_blank" rel="noopener noreferrer">Live Demo ↗</a>}
+              {demo && <a href={demo} target="_blank" rel="noopener noreferrer">See more ↗</a>}
             </div>
           </div>
         </div>
@@ -87,7 +88,22 @@ export default function ProjectCard({ title, description, image, github, demo, t
         <div className="image-viewer-overlay" onClick={() => setImageViewerOpen(false)}>
           <button className="image-viewer-close" onClick={() => setImageViewerOpen(false)} aria-label="Close image viewer">×</button>
           <div className="image-viewer-content" onClick={e => e.stopPropagation()}>
-            <img src={image} alt={title} className="image-viewer-image" />
+            <div className="image-viewer-image-wrapper-modal">
+              <Image
+                src={image}
+                alt={title}
+                className="image-viewer-image"
+                fill
+                style={{
+                  borderRadius: '0.5rem',
+                  boxShadow: '0 8px 32px 0 rgba(0,0,0,0.45)',
+                  background: '#181825',
+                  objectFit: 'contain',
+                }}
+                sizes="(max-width: 600px) 98vw, 800px"
+                priority
+              />
+            </div>
             <div className="image-viewer-caption">{title}</div>
           </div>
         </div>
@@ -311,12 +327,13 @@ export default function ProjectCard({ title, description, image, github, demo, t
         .image-viewer-overlay {
           position: fixed;
           top: 0; left: 0; right: 0; bottom: 0;
-          background: rgba(0, 0, 0, 0.7);
+          background: rgba(30, 30, 46, 0.82);
           z-index: 2000;
           display: flex;
           align-items: center;
           justify-content: center;
           animation: fadeIn 0.2s;
+          padding: 4vw 4vw;
         }
         .image-viewer-close {
           position: absolute;
@@ -335,23 +352,37 @@ export default function ProjectCard({ title, description, image, github, demo, t
           color: var(--color-terminal-pink);
         }
         .image-viewer-content {
-          max-width: 90vw;
-          max-height: 90vh;
+          max-width: 96vw;
+          width: auto;
+          min-width: 0;
+          min-height: 0;
+          margin: auto;
           display: flex;
           flex-direction: column;
           align-items: center;
+          justify-content: center;
           animation: zoomIn 0.3s ease;
+          background: rgba(40, 40, 60, 0.85);
+          border-radius: 0.5rem;
+          box-shadow: 0 8px 48px 0 #000a, 0 0 0 3px var(--ctp-mauve);
+          padding: 2vw 2vw 1vw 2vw;
         }
         @keyframes zoomIn {
           from { transform: scale(0.9); opacity: 0; }
           to { transform: scale(1); opacity: 1; }
         }
+        .image-viewer-image-wrapper-modal {
+          position: relative;
+          width: 96vw;
+          max-width: 800px;
+          aspect-ratio: 4/3;
+          margin: 0 auto;
+        }
         .image-viewer-image {
-          max-width: 100%;
-          max-height: 80vh;
           object-fit: contain;
           border-radius: 0.5rem;
-          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+          background: #181825;
         }
         .image-viewer-caption {
           color: var(--color-terminal-text);
@@ -407,6 +438,25 @@ export default function ProjectCard({ title, description, image, github, demo, t
           .image-viewer-caption {
             font-size: 1rem;
             margin-top: 0.5rem;
+          }
+          .image-viewer-content {
+            max-width: 98vw;
+            width: auto;
+            margin: auto;
+            padding: 1vw;
+            border-radius: 0.5rem;
+          }
+          .image-viewer-image-wrapper-modal {
+            position: relative;
+            width: 98vw;
+            max-width: 98vw;
+            aspect-ratio: 4/3;
+            box-sizing: border-box;
+            margin: 0 auto;
+          }
+          .image-viewer-image {
+            object-fit: contain !important;
+            border-radius: 0.5rem !important;
           }
         }
       `}</style>

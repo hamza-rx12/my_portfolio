@@ -1,83 +1,83 @@
 "use client";
 
 import Image from 'next/image';
-import { FaJava, FaBook, FaMusic, FaPlane, FaLinux, FaCode, FaLanguage, FaTerminal, FaSmile, FaKeyboard, FaUserAstronaut, FaRobot } from 'react-icons/fa';
+import { FaBook, FaMusic, FaPlane, FaLinux, FaCode, FaLanguage, FaTerminal, FaSmile, FaKeyboard, FaUserAstronaut, FaRobot } from 'react-icons/fa';
 import { SiGnubash, SiGnome, SiVsco, SiNeovim, SiArchlinux, SiJavascript, SiTypescript, SiPython, SiRust, SiC, SiHtml5, SiCss3, SiMyanimelist } from 'react-icons/si';
 import { RiJavaLine } from "react-icons/ri";
 
 const aboutInfo = {
-    user: 'Hamza',
-    host: 'Alaoui Mhamdi',
-    description: `I am a second-year Data Engineering student with a strong passion for artificial intelligence, big data, and distributed systems. Curious, autonomous, and highly motivated, I am actively seeking an internship where I can contribute to innovative projects in AI, natural language processing (NLP), or large-scale data engineering.
+  user: 'Hamza',
+  host: 'Alaoui Mhamdi',
+  description: `I am a second-year Data Engineering student with a strong passion for artificial intelligence, big data, and distributed systems. Curious, autonomous, and highly motivated, I am actively seeking an internship where I can contribute to innovative projects in AI, natural language processing (NLP), or large-scale data engineering.
 With hands-on experience in machine learning, data processing, and software development, I aim to deepen my technical expertise while collaborating in a stimulating and impact-driven environment.`,
-    hobbies: [
-        { icon: <FaCode />, label: 'Coding' },
-        { icon: <FaLinux />, label: 'Linux ricing' },
-        { icon: <FaBook />, label: 'Reading' },
-        { icon: <FaMusic />, label: 'Music' },
-        { icon: <FaPlane />, label: 'Travel' },
-        { icon: <SiMyanimelist />, label: 'Anime/Manga' }
+  hobbies: [
+    { icon: <FaCode />, label: 'Coding' },
+    { icon: <FaLinux />, label: 'Linux ricing' },
+    { icon: <FaBook />, label: 'Reading' },
+    { icon: <FaMusic />, label: 'Music' },
+    { icon: <FaPlane />, label: 'Travel' },
+    { icon: <SiMyanimelist />, label: 'Anime/Manga' }
+  ],
+  languages: [
+    { icon: <FaLanguage />, label: 'Arabic' },
+    { icon: <FaLanguage />, label: 'English' },
+    { icon: <FaLanguage />, label: 'French' },
+  ],
+  programming: [
+    { icon: <SiC />, label: 'C' },
+    { icon: <RiJavaLine />, label: 'Java' },
+    { icon: <SiPython />, label: 'Python' },
+    { icon: <SiGnubash />, label: 'Shell' },
+    { icon: <SiTypescript />, label: 'TypeScript' },
+    { icon: <SiJavascript />, label: 'JavaScript' },
+    { icon: <SiHtml5 />, label: 'HTML' },
+    { icon: <SiCss3 />, label: 'CSS' },
+    { icon: <SiRust />, label: 'Rust' },
+  ],
+  fun: [
+    { icon: <SiArchlinux />, label: 'OS: Arch Linux (btw)' },
+    { icon: <SiVsco />, label: 'Editor: VSCode' },
+    { icon: <SiNeovim />, label: 'Editor: Neovim' },
+    { icon: <FaTerminal />, label: 'Shell: zsh' },
+    { icon: <FaSmile />, label: 'Theme: Catppuccin Mocha' },
+    { icon: <SiGnome />, label: 'Favorite DE: GNOME' },
+  ],
+  activities: {
+    interests: [
+      { icon: <FaCode />, label: 'Big Data' },
+      { icon: <FaRobot />, label: 'AI' },
+      { icon: <FaKeyboard />, label: 'Programming' },
+      { icon: <FaBook />, label: 'Reading' },
+      { icon: <FaUserAstronaut />, label: 'Anime & Manga' },
     ],
-    languages: [
-        { icon: <FaLanguage />, label: 'Arabic' },
-        { icon: <FaLanguage />, label: 'English' },
-        { icon: <FaLanguage />, label: 'French' },
+    extracurricular: [
+      { icon: <FaUserAstronaut />, label: 'DATAI' },
+      { icon: <FaUserAstronaut />, label: '01 Club' },
+      { icon: <FaUserAstronaut />, label: 'ASIANHUB' },
     ],
-    programming: [
-        { icon: <SiC />, label: 'C' },
-        { icon: <RiJavaLine />, label: 'Java' },
-        { icon: <SiPython />, label: 'Python' },
-        { icon: <SiGnubash />, label: 'Shell' },
-        { icon: <SiTypescript />, label: 'TypeScript' },
-        { icon: <SiJavascript />, label: 'JavaScript' },
-        { icon: <SiHtml5 />, label: 'HTML' },
-        { icon: <SiCss3 />, label: 'CSS' },
-        { icon: <SiRust />, label: 'Rust' },
-    ],
-    fun: [
-        { icon: <SiArchlinux />, label: 'OS: Arch Linux (btw)' },
-        { icon: <SiVsco />, label: 'Editor: VSCode' },
-        { icon: <SiNeovim />, label: 'Editor: Neovim' },
-        { icon: <FaTerminal />, label: 'Shell: zsh' },
-        { icon: <FaSmile />, label: 'Theme: Catppuccin Mocha' },
-        { icon: <SiGnome />, label: 'Favorite DE: GNOME' },
-    ],
-    activities: {
-        interests: [
-            { icon: <FaCode />, label: 'Big Data' },
-            { icon: <FaRobot />, label: 'AI' },
-            { icon: <FaKeyboard />, label: 'Programming' },
-            { icon: <FaBook />, label: 'Reading' },
-            { icon: <FaUserAstronaut />, label: 'Anime & Manga' },
-        ],
-        extracurricular: [
-            { icon: <FaUserAstronaut />, label: 'DATAI' },
-            { icon: <FaUserAstronaut />, label: '01 Club' },
-            { icon: <FaUserAstronaut />, label: 'ASIANHUB' },
-        ],
-    },
+  },
 };
 
 export default function AboutSection() {
-    return (
-        <section id="about" className="about-fastfetch spa-section" style={{ padding: '2rem' }}>
-            <div className="ff-header ff-header-center">
-                <span className="cmd-arrow">&gt;&gt;&gt;</span> <span className="cmd-cmd">whoami</span>
+  return (
+    <section id="about" className="about-fastfetch spa-section" style={{ padding: '2rem' }}>
+      <div className="ff-header ff-header-center">
+        <span className="cmd-arrow">&gt;&gt;&gt;</span> <span className="cmd-cmd">whoami</span>
+      </div>
+      <div className="ff-main ff-main-center">
+        <div className="slide-up-in">
+          <div className="ff-info-box ff-info-box-center">
+            <div className="ff-pic-wrapper ff-pic-wrapper-inside">
+              <Image src="/images/myPic.png" alt="Hamza" width={160} height={160} className="ff-pic" />
             </div>
-            <div className="ff-main ff-main-center">
-                <div className="slide-up-in">
-                    <div className="ff-info-box ff-info-box-center">
-                        <div className="ff-pic-wrapper ff-pic-wrapper-inside">
-                            <Image src="/images/myPic.png" alt="Hamza" width={160} height={160} className="ff-pic" />
-                        </div>
-                        <div className="ff-info ff-info-center">
-                            <div className="ff-row ff-title ff-title-center">{aboutInfo.user} {aboutInfo.host}</div>
-                            <div className="ff-row ff-desc ff-desc-center">{aboutInfo.description}</div>
-                        </div>
-                    </div>
-                </div>
+            <div className="ff-info ff-info-center">
+              <div className="ff-row ff-title ff-title-center">{aboutInfo.user} {aboutInfo.host}</div>
+              <div className="ff-row ff-desc ff-desc-center">{aboutInfo.description}</div>
             </div>
-            <style jsx>{`
+          </div>
+        </div>
+      </div>
+      <style jsx>{`
                 .about-fastfetch {
                   font-family: var(--font-terminal);
                   color: var(--color-terminal-text);
@@ -170,6 +170,6 @@ export default function AboutSection() {
                   }
                 }
             `}</style>
-        </section>
-    );
+    </section>
+  );
 } 

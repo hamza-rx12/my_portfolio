@@ -55,7 +55,7 @@ const projects = [
             'Jellyfish',
             'Real-time Detection & Correction',
         ],
-        image: '/images/opensource.png',
+        image: '/projects/typoTamer.png',
     },
     {
         title: 'Image Master',
@@ -68,9 +68,10 @@ const projects = [
     {
         title: 'MongoDB Sharded Cluster',
         description:
-            'A prototype MongoDB sharded cluster to optimize data distribution and scalability, ensuring efficient query performance.',
+            'A prototype MongoDB sharded cluster to optimize data distribution and scalability, ensuring efficient query performance. For more details, see the linked presentation.',
         tools: ['MongoDB', 'Docker', 'Python', 'Linux'],
-        image: '/images/portfolio.png',
+        image: '/projects/mongoDBShardedCluster.png',
+        demo: 'https://drive.google.com/file/d/1P5glCoqCU2U6A1pImRkdAuIYRYntchmR/view?usp=sharing',
     },
 ];
 

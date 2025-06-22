@@ -33,7 +33,7 @@ export default function HomePage() {
           <span className="cmd-arrow">&gt;&gt;&gt;</span> <span className="cmd-cmd">cat welcome.txt</span>
         </div>
         <p style={{ fontSize: '1.25rem', maxWidth: 600, textAlign: 'center', margin: '1.5rem 0' }}>
-          Hi! I'm a data engineering student passionate about AI, machine learning, and distributed systems. I enjoy building intelligent, impactful solutions. Explore my projects and feel free to connect!
+          Hi! I&#39;m a data engineering student passionate about AI, machine learning, and distributed systems. I enjoy building intelligent, impactful solutions. Explore my projects and feel free to connect!
         </p>
         <div className="cta-btn-row">
           <a href="#about" className="cta-btn about">
