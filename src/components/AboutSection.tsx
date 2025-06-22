@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { FaBook, FaMusic, FaPlane, FaLinux, FaCode, FaLanguage, FaTerminal, FaSmile, FaKeyboard, FaUserAstronaut, FaRobot } from 'react-icons/fa';
 import { SiGnubash, SiGnome, SiVsco, SiNeovim, SiArchlinux, SiJavascript, SiTypescript, SiPython, SiRust, SiC, SiHtml5, SiCss3, SiMyanimelist } from 'react-icons/si';
 import { RiJavaLine } from "react-icons/ri";
+import { useState, useRef, useEffect } from 'react';
 
 const aboutInfo = {
   user: 'Hamza',
@@ -59,6 +60,25 @@ With hands-on experience in machine learning, data processing, and software deve
 };
 
 export default function AboutSection() {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    }
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dropdownOpen]);
+
   return (
     <section id="about" className="about-fastfetch spa-section" style={{ padding: '2rem' }}>
       <div className="ff-header ff-header-center">
@@ -77,9 +97,11 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
-      <div className="resume-dropdown">
-        <button className="resume-main-btn">Download Resume ▼</button>
-        <div className="resume-dropdown-content">
+      <div className="resume-dropdown" ref={dropdownRef}>
+        <button className="resume-main-btn" onClick={() => setDropdownOpen(v => !v)}>
+          Download Resume ▼
+        </button>
+        <div className={`resume-dropdown-content${dropdownOpen ? ' open' : ''}`}>
           <a href="/resume/resume-en.pdf" download>🇬🇧 English</a>
           <a href="/resume/resume-fr.pdf" download>🇫🇷 French</a>
         </div>
@@ -208,7 +230,7 @@ export default function AboutSection() {
                   margin-top: 0.3em;
                   right: 0;
                 }
-                .resume-dropdown:hover .resume-dropdown-content {
+                .resume-dropdown-content.open {
                   display: block;
                 }
                 .resume-dropdown-content a {

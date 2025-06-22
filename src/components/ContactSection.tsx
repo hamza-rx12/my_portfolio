@@ -1,6 +1,7 @@
 "use client";
 
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { useState, useRef, useEffect } from 'react';
 
 const CONTACTS = [
   {
@@ -15,6 +16,25 @@ const CONTACTS = [
 ];
 
 export default function ContactSection() {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    }
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dropdownOpen]);
+
   return (
     <section id="contact" className="spa-section" style={{ padding: '2rem' }}>
       <div className="ff-header">
@@ -36,9 +56,11 @@ export default function ContactSection() {
           </div>
         ))}
       </div>
-      <div className="resume-dropdown">
-        <button className="resume-main-btn">Download Resume ▼</button>
-        <div className="resume-dropdown-content">
+      <div className="resume-dropdown" ref={dropdownRef}>
+        <button className="resume-main-btn" onClick={() => setDropdownOpen(v => !v)}>
+          Download Resume ▼
+        </button>
+        <div className={`resume-dropdown-content${dropdownOpen ? ' open' : ''}`}>
           <a href="/resume/resume-en.pdf" download>🇬🇧 English</a>
           <a href="/resume/resume-fr.pdf" download>🇫🇷 French</a>
         </div>
@@ -117,7 +139,7 @@ export default function ContactSection() {
           margin-top: 0.3em;
           right: 0;
         }
-        .resume-dropdown:hover .resume-dropdown-content {
+        .resume-dropdown-content.open {
           display: block;
         }
         .resume-dropdown-content a {

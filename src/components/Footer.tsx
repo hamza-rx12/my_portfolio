@@ -6,14 +6,14 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__left">
-        <span className="footer__brand">MyPortfolio</span>
+        {/* <span className="footer__brand">MyPortfolio</span> */}
         <span className="footer__copy">&copy; {new Date().getFullYear()} All rights reserved.</span>
       </div>
       <div className="footer__socials">
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="footer__icon github" aria-label="GitHub">
+        <a href="https://github.com/hamza-rx12/" target="_blank" rel="noopener noreferrer" className="footer__icon github" aria-label="GitHub">
           <FaGithub />
         </a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="footer__icon linkedin" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/hamza-alaoui-mhamdi" target="_blank" rel="noopener noreferrer" className="footer__icon linkedin" aria-label="LinkedIn">
           <FaLinkedin />
         </a>
       </div>
