@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -11,38 +11,56 @@ const navLinks = [
   { href: '#contact', label: 'Contact' },
 ];
 
-function getSectionFromHash(hash: string): string {
-  return hash ? hash.replace('#', '') : 'home';
-}
-
 export default function Navbar() {
   const [active, setActive] = useState('home');
+  const isNavigatingRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Skip scroll handling if we're in the middle of a navigation
+      if (isNavigatingRef.current) return;
+
       const sections = navLinks.map(link => document.getElementById(link.href.replace('#', '')));
-      const scrollY = window.scrollY + 120; // offset for navbar
+      const scrollY = window.scrollY + 120;
       let current = 'home';
+
       for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         if (section && section.offsetTop <= scrollY) {
           current = navLinks[i].href.replace('#', '');
         }
       }
+
       setActive(current);
     };
+
     window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    handleScroll(); // Initial call
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const id = href.replace('#', '');
     const section = document.getElementById(id);
+
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      // Mark that we're navigating
+      isNavigatingRef.current = true;
+
+      // Set active state immediately
       setActive(id);
+
+      // Scroll to section with smooth animation
+      section.scrollIntoView({ behavior: 'smooth' });
+
+      // Re-enable scroll handling after animation (longer timeout for scroll wheel issues)
+      setTimeout(() => {
+        isNavigatingRef.current = false;
+      }, 2000); // Extended timeout to handle scroll wheel interruptions
     }
   };
 

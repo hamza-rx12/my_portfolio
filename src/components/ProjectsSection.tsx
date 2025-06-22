@@ -9,7 +9,7 @@ const projects = [
             'A data pipeline for network billing that processes large volumes of customer usage records (SMS, voice calls, data), supports batch and real-time processing, pricing, invoice generation, and dashboard visualization.',
         github: 'https://github.com/hamza-rx12/big_data_network_billing',
         tools: ['Java', 'Spark', 'Kafka', 'Flink', 'Docker Compose', 'MongoDB', 'MinIO', 'Streamlit'],
-        image: '/images/portfolio.png',
+        image: '/projects/networkBillingPipeline.png',
     },
     {
         title: 'TagWise',
@@ -63,7 +63,7 @@ const projects = [
             'A Tkinter-based GUI application for managing and manipulating images, offering features like resizing, cropping, and applying filters.',
         github: 'https://github.com/hamza-rx12/pypro.git',
         tools: ['Python', 'Tkinter', 'PIL (Pillow)', 'Matplotlib', 'NumPy'],
-        image: '/images/opensource.png',
+        image: '/projects/imageMaster.png',
     },
     {
         title: 'MongoDB Sharded Cluster',

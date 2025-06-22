@@ -1,61 +1,61 @@
 "use client";
 
 const skills = [
-    {
-        category: "Languages",
-        items: ["C", "Java", "Python", "JavaScript/TypeScript", "PL/SQL", "Shell (Bash)", "Rust (simple stuff)"]
-    },
-    {
-        category: "Artificial Intelligence",
-        items: ["Machine/Deep Learning", "TensorFlow", "Keras", "Scikit-learn", "Hugging Face", "LangChain"]
-    },
-    {
-        category: "Data Analysis",
-        items: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "NLTK", "SpaCy"]
-    },
-    {
-        category: "Big Data",
-        items: ["Hadoop", "Spark", "Kafka", "Flink", "MongoDB Sharded Cluster"]
-    },
-    {
-        category: "Web Development",
-        items: ["Flask", "FastAPI", "Spring Boot", "React", "Tailwind CSS"]
-    },
-    {
-        category: "Databases",
-        items: ["Oracle Database", "MariaDB", "PostgreSQL", "MongoDB", "Redis"]
-    },
-    {
-        category: "DevOps",
-        items: ["Docker", "Docker Compose", "Linux"]
-    },
-    {
-        category: "Languages (Spoken)",
-        items: ["Arabic (native)", "English (fluent)", "French (fluent)"]
-    }
+  {
+    category: "Languages",
+    items: ["C", "Java", "Python", "JavaScript/TypeScript", "PL/SQL", "Shell (Bash)", "Rust (simple stuff)"]
+  },
+  {
+    category: "Artificial Intelligence",
+    items: ["Machine/Deep Learning", "NLP", "TensorFlow", "Keras", "Scikit-learn", "Hugging Face", "LangChain"]
+  },
+  {
+    category: "Data Analysis",
+    items: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "NLTK", "SpaCy"]
+  },
+  {
+    category: "Big Data",
+    items: ["Hadoop", "Spark", "Kafka", "Flink"]
+  },
+  {
+    category: "Web Development",
+    items: ["Flask", "FastAPI", "Spring Boot", "React", "Tailwind CSS"]
+  },
+  {
+    category: "Databases",
+    items: ["Oracle Database", "MariaDB", "PostgreSQL", "MongoDB", "Redis"]
+  },
+  {
+    category: "DevOps",
+    items: ["Docker", "Docker Compose", "Linux"]
+  },
+  {
+    category: "Languages (Spoken)",
+    items: ["Arabic (native)", "English (fluent)", "French (fluent)"]
+  }
 ];
 
 export default function SkillsSection() {
-    return (
-        <section id="skills" className="skills-section spa-section">
-            <div className="ff-header">
-                <span className="cmd-arrow">&gt;&gt;&gt;</span> <span className="cmd-cmd">ls skills</span>
-            </div>
-            <div className="skills-list">
-                {skills.map((cat, i) => (
-                    <div className="slide-up-in" style={{ transitionDelay: `${i * 100}ms` }} key={i}>
-                        <div className="skills-category">
-                            <div className="skills-category-title">{cat.category}</div>
-                            <div className="skills-badges">
-                                {cat.items.map((item, j) => (
-                                    <span className="skill-badge" key={j}>{item}</span>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+  return (
+    <section id="skills" className="skills-section spa-section">
+      <div className="ff-header">
+        <span className="cmd-arrow">&gt;&gt;&gt;</span> <span className="cmd-cmd">ls skills</span>
+      </div>
+      <div className="skills-list">
+        {skills.map((cat, i) => (
+          <div className="slide-up-in" style={{ transitionDelay: `${i * 100}ms` }} key={i}>
+            <div className="skills-category">
+              <div className="skills-category-title">{cat.category}</div>
+              <div className="skills-badges">
+                {cat.items.map((item, j) => (
+                  <span className="skill-badge" key={j}>{item}</span>
                 ))}
+              </div>
             </div>
-            <style jsx>{`
+          </div>
+        ))}
+      </div>
+      <style jsx>{`
         .skills-section {
           width: 100%;
           max-width: 900px;
@@ -122,6 +122,6 @@ export default function SkillsSection() {
           }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 } 
