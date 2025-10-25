@@ -9,7 +9,7 @@ import { useState, useRef, useEffect } from 'react';
 const aboutInfo = {
   user: 'Hamza',
   host: 'Alaoui Mhamdi',
-  description: `I am a second-year Data Engineering student with a strong passion for artificial intelligence, big data, and distributed systems. Curious, autonomous, and highly motivated, I am actively seeking an internship where I can contribute to innovative projects in AI, natural language processing (NLP), or large-scale data engineering.
+  description: `I am a final-year Data Engineering student with a strong passion for artificial intelligence, big data, and distributed systems. Curious, autonomous, and highly motivated, I am actively seeking an internship where I can contribute to innovative projects in AI, natural language processing (NLP), or large-scale data engineering.
 With hands-on experience in machine learning, data processing, and software development, I aim to deepen my technical expertise while collaborating in a stimulating and impact-driven environment.`,
   hobbies: [
     { icon: <FaCode />, label: 'Coding' },

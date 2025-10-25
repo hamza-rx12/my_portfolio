@@ -2,7 +2,7 @@
 
 const skills = [
   {
-    category: "Languages",
+    category: "Programming Languages",
     items: ["C", "Java", "Python", "JavaScript/TypeScript", "PL/SQL", "Shell (Bash)", "Rust (simple stuff)"]
   },
   {
@@ -28,6 +28,10 @@ const skills = [
   {
     category: "DevOps",
     items: ["Docker", "Docker Compose", "Linux"]
+  },
+  {
+    category: "Cloud Platforms",
+    items: ["AWS", "Azure", "Terraform"]
   },
   {
     category: "Languages (Spoken)",

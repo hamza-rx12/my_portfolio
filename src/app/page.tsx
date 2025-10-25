@@ -5,6 +5,7 @@ import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
 import EducationSection from '../components/EducationSection';
 import SkillsSection from '../components/SkillsSection';
+import ExperienceSection from '../components/ExperienceSection';
 import { useEffect } from 'react';
 
 export default function HomePage() {
@@ -49,6 +50,7 @@ export default function HomePage() {
       </section>
       <AboutSection />
       <SkillsSection />
+      <ExperienceSection />
       <EducationSection />
       <HobbiesActivitiesSection />
       <ProjectsSection />
