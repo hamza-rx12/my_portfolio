@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/theme.css";
 import "../app/globals.css";
+import "./layout.css";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -27,21 +28,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{
-          minHeight: '100vh',
-          background: 'var(--color-terminal-bg) url(/forest-bg.jpg) center center/cover no-repeat fixed',
-          color: 'var(--color-terminal-text)',
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
+      <head />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased main-layout`}>
         <Navbar />
-        <div style={{ flex: 1, width: '100%' }}>
-          {children}
+        <div className="main-container">
+          <main className="main-content">
+            {children}
+          </main>
+          <Footer />
         </div>
-        <Footer />
       </body>
     </html>
   );

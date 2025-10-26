@@ -1,0 +1,119 @@
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.toggle-btn {
+  display: none;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  background: #181a20;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.navbar:hover:not(.expanded) {
+  width: 240px;
+}
+
+.navbar__links {
+  list-style: none;
+  padding: 4rem 0 0 0;
+  margin: 0;
+}
+
+.navbar__links li a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: all 0.2s;
+  font-family: var(--font-geist-mono);
+}
+
+.navbar__links li a:hover {
+  background: rgba(255, 184, 108, 0.1);
+  color: #ffb86c;
+}
+
+.navbar__links li a.active {
+  background: rgba(255, 184, 108, 0.2);
+  color: #ffb86c;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.nav-label {
+  transition: opacity 0.2s;
+}
+
+.navbar:not(:hover):not(.expanded) .nav-label {
+  opacity: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    transform: translateX(-100%);
+    width: 240px !important;
+    transition: transform 0.3s ease;
+  }
+
+  .navbar.expanded {
+    transform: translateX(0);
+  }
+
+  .navbar:not(:hover) .nav-label {
+    opacity: 1;
+    width: auto;
+    visibility: visible;
+  }
+
+  .toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 1rem;
+    top: 0.75rem;
+    width: 40px;
+    height: 40px;
+    background: #181a20;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+  }
+
+  .toggle-btn:hover {
+    background: rgba(255, 184, 108, 0.1);
+    color: #ffb86c;
+  }
+}

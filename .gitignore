@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+public/resume/resume-en-old.pdf
+public/resume/resume-fr-old.pdf
